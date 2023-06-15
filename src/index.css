@@ -1,13 +1,101 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*==============
+     Header
+==============*/
+
+/*==== Background ====*/
+
+/* Background styles */
+.bg-img{
+    @apply bg-cover bg-no-repeat bg-top text-center 
+    pt-6 pb-28 px-6 sm:pt-8 sm:pb-32 md:pt-10 md:pb-36 lg:pt-4 lg:pb-24 xl:pt-6 xl:pb-28;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* background image */
+#header{
+    background-image: url("/public/images/pattern-bg-desktop.png");
 }
+/* responsive background image */
+@media (max-width: 1023.28px) {
+    #header{
+        background-image: url("/public/images/pattern-bg-mobile.png");
+    }
+}
+
+/* Title bar */
+.title{
+    @apply font-medium text-white text-xl mb-6 sm:text-2xl xl:text-3xl;
+}
+
+/* Search bar */
+.input-text{
+    @apply font-light rounded-l-xl focus:outline-none cursor-pointer 
+    py-3 px-2 w-full text-xs sm:w-6/12 sm:text-sm sm:px-5 lg:w-4/12 xl:text-base;
+}
+
+/* Submit button */
+.button{
+    @apply  rounded-r-xl bg-black hover:bg-grey-light  transition ease-in duration-300 cursor-pointer; 
+}
+
+
+/*==============
+    Main
+==============*/
+
+/* Popup bar */
+.content-container{
+   @apply bg-white grid grid-flow-row text-center p-4 w-4/6 rounded-xl shadow-grey-dark
+   sm:p-6 sm:w-3/6 lg:grid-flow-row lg:grid-cols-4 lg:text-left lg:p-4 lg:w-5/6 xl:p-6;
+}
+
+/* Each row in popUp */
+.content-div{
+    @apply sm:p-4 lg:py-0 lg:pl-4 lg:border-l lg:border-grey-light xl:pl-6;
+}
+
+/* Each row heading */
+.content-heading{
+    @apply font-bold tracking-widest text-grey-light text-xs mb-1 sm:mb-4 sm:text-sm xl:text-base;
+}
+
+/* Each row detail */
+.content-detail{
+    @apply font-medium text-base sm:text-2xl lg:text-xl xl:text-2xl;
+}
+
+
+/*==============
+     Footer
+==============*/
+
+/* height for the map  */
+.leaflet-container{
+    --length: 0px; 
+    height: calc( 100vh - var(--length) );
+}
+
+
+/* Animation for Poppup detail and badges for map marker */
+.content-detail, .leaflet-popup-content{
+    animation: conatiner 0.5s forwards ease-in;
+}
+@keyframes conatiner {
+    0%{
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
