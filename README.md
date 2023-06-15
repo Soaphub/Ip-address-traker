@@ -29,8 +29,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here]
-- Live Site URL: [Add live site URL here]
+- Solution URL: [https://github.com/Soaphub/Ip-address-traker]
+- Live Site URL: [https://inspiring-selkie-3e9f7c.netlify.app/]
 
 ## My process
 
